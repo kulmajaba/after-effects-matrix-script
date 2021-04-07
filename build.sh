@@ -1,0 +1,1 @@
+./node_modules/.bin/extendscriptr -s src/letteranimator.js -o dist/letteranimator.js && cat dist/letteranimator.js | ./node_modules/.bin/clipboard

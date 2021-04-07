@@ -1,0 +1,16 @@
+{
+  "name": "after-effects-matrix-script",
+  "version": "1.0.0",
+  "description": "After Effects Matrix title effect",
+  "main": "letteranimator.js",
+  "scripts": {
+    "start": "./node_modules/.bin/watch \"./node_modules/.bin/extendscriptr --script src/letteranimator.js --output dist/letteranimator.js\" src/"
+  },
+  "author": "Mika Kuitunen",
+  "license": "WTFPL",
+  "dependencies": {
+    "clipboard-cli": "^2.0.1",
+    "extendscriptr": "^1.2.6",
+    "watch": "^1.0.2"
+  }
+}
