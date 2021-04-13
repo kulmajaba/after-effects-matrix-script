@@ -1,1 +1,0 @@
-./node_modules/.bin/extendscriptr -s src/test.js -o dist/test.js && cat dist/test.js | ./node_modules/.bin/clipboard

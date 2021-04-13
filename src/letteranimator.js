@@ -1,10 +1,18 @@
-const minInerval = 10;
-const probOfStationary = 50;
-const probOfStationaryDec = probOfStationary / 100.0;
+const allCharactersStatic = effect("All characters static")("Checkbox");
+const length = effect("Length")("Slider");
+const minInerval = effect("Minimum interval")("Slider");
+const jitter = effect("Interval jitter")("Slider");
+const probOfStatic = effect("Probability of static chars")("Slider");;
+const seed = effect("Random seed")("Slider");
 
-const ranges = [[65, 90], [97, 122], [48, 57]];
-//const charCodes = ranges.map((range) => Array.from(Array(range[1]-range[0]+1).keys(), (v) => range[0]));
+seedRandom(seed, true);
 
-const isStationary = random() > probOfStationaryDec;
+const charCodeRange = [32, 126];
+const forbiddenCodes = [64, 96];
 
-value = isStationary;
+let charCodes = Array.from(Array(charCodeRange[1]-charCodeRange[0]+1).keys()).map((v) => v + charCodeRange[0]);
+forbiddenCodes.forEach((v) => charCodes.splice(charCodes.findIndex((x) => x === v), 1));
+
+const isStationary = random()*100 > probOfStatic;
+
+value = length;
