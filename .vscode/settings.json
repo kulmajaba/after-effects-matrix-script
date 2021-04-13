@@ -3,7 +3,7 @@
     "commands": [
         {
             "match": "\\.js$",
-            "cmd": "echo 'Building ${fileBasename}' && node index.js && cat dist/letteranimator.js | clipboard"
+            "cmd": "echo 'Building ${fileBasename}' && node index.js && cat dist/letteranimator.js | npx clipboard"
         }
     ]
 }
