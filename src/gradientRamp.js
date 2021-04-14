@@ -22,7 +22,7 @@ const tail = Math.max(head - lifeSpan, -1);
 
 const adjustedHead = hasTarget ? Math.min(head, length - 1) : head;
 
-value = [thisComp.width / 2, position[1] + (fontSize * lineHeightMultiplier + lineHeightAdjust) * (adjustedHead - whiteLetters) + offsetPx];
+value = [thisComp.width / 2, position[1] - anchorPoint[1] + (fontSize * lineHeightMultiplier + lineHeightAdjust) * (adjustedHead - whiteLetters) + offsetPx];
 
 // #####################################################################################################################
 // End of ramp
