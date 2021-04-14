@@ -11,6 +11,7 @@ const lineHeightAdjust = Math.round(effect("Line height adjust")("Slider"));
 const spaceFrequency = Math.round(effect("Space frequency")("Slider"));
 const lifeSpan = Math.round(effect("Character lifespan")("Slider"));
 
+// TODO: null check this
 const targetChar = thisComp.layer("Title").text.sourceText.charAt(targetIndex);
 
 const lineHeightMultiplier = 0.8125;
