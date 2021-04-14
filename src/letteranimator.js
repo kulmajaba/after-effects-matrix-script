@@ -1,4 +1,6 @@
 // Effect controls
+const hasTarget = effect("Has target")("Checkbox") == 1;
+const targetIndex = Math.round(effect("Target character index")("Slider"));
 const allCharactersStatic = effect("All characters static")("Checkbox") == 1;
 const length = Math.round(effect("Length")("Slider"));
 const minInterval = Math.round(effect("Minimum interval")("Slider"));
@@ -8,6 +10,8 @@ const fontSize = Math.round(effect("Font size")("Slider"));
 const lineHeightAdjust = Math.round(effect("Line height adjust")("Slider"));
 const spaceFrequency = Math.round(effect("Space frequency")("Slider"));
 const lifeSpan = Math.round(effect("Character lifespan")("Slider"));
+
+const targetChar = thisComp.layer("Title").text.sourceText.charAt(targetIndex);
 
 const lineHeightMultiplier = 0.8125;
 
@@ -55,10 +59,17 @@ const head = Math.round((time - startTime) * frameRate);
 const tail = Math.max(head - lifeSpan, -1);
 
 charArr.forEach((char, i) => {
+  if (hasTarget && i === head) {
+    charArr[i] = targetChar;
+  }
   if (i > head || i < tail) {
     charArr[i] = ' ';
   }
 })
+
+if (hasTarget && head > charArr.length - 1) {
+  charArr[charArr.length - 1] = targetChar;
+}
 
 text.sourceText.style
   .setFontSize(fontSize)
@@ -66,4 +77,3 @@ text.sourceText.style
   //.setText(head + ', ' + tail + '\n' + charArr);
   .setText(charArr.join('\n'));
 
-  

@@ -1,8 +1,10 @@
-const isHead = true;
-const whiteLetters = 1
+// Start of ramp
+const whiteLetters = 1;
 const offsetPx = 5;
 
 // Effect controls
+const hasTarget = effect("Has target")("Checkbox") == 1;
+const length = Math.round(effect("Length")("Slider"));
 const minInterval = Math.round(effect("Minimum interval")("Slider"));
 const fontSize = Math.round(effect("Font size")("Slider"));
 const lineHeightAdjust = Math.round(effect("Line height adjust")("Slider"));
@@ -18,9 +20,19 @@ posterizeTime(frameRate);
 const head = Math.round((time - startTime) * frameRate);
 const tail = Math.max(head - lifeSpan, -1);
 
-value = [thisComp.width / 2, position[1] + (fontSize * lineHeightMultiplier + lineHeightAdjust) * (head - whiteLetters) + offsetPx];
+const adjustedHead = hasTarget ? Math.min(head, length - 1) : head;
 
+value = [thisComp.width / 2, position[1] + (fontSize * lineHeightMultiplier + lineHeightAdjust) * (adjustedHead - whiteLetters) + offsetPx];
 
+// #####################################################################################################################
+// End of ramp
 
-// const start = effect("Gradient Ramp")("Start of Ramp")
-// value = [start[0], start[1] - 0.5];
+// Effect controls
+const hasTarget = effect("Has target")("Checkbox") == 1;
+const fontSize = Math.round(effect("Font size")("Slider"));
+const lineHeightAdjust = Math.round(effect("Line height adjust")("Slider"));
+
+const lineHeightMultiplier = 0.8125;
+
+const start = effect("Gradient Ramp")("Start of Ramp")
+value = [start[0], start[1] - (hasTarget ? 0.5 : (fontSize * lineHeightMultiplier + lineHeightAdjust))];
