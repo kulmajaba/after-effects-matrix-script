@@ -2,13 +2,14 @@
 const allCharactersStatic = effect("All characters static")("Checkbox") == 1;
 const length = Math.round(effect("Length")("Slider"));
 const minInterval = Math.round(effect("Minimum interval")("Slider"));
-const positiveJitter = Math.round(effect("Interval positive jitter")("Slider"));
 const probOfChanging = effect("Probability of changing chars")("Slider");
 const seed = Math.round(effect("Random seed")("Slider"));
 const fontSize = Math.round(effect("Font size")("Slider"));
 const lineHeightAdjust = Math.round(effect("Line height adjust")("Slider"));
 const spaceFrequency = Math.round(effect("Space frequency")("Slider"));
 const lifeSpan = Math.round(effect("Character lifespan")("Slider"));
+
+const lineHeightMultiplier = 0.8125;
 
 // Calculate framerate for the layer based on min interval (in frames)
 const frameRate = 1.0/thisComp.frameDuration/(minInterval !== 0 ? minInterval : 1)
@@ -61,6 +62,8 @@ charArr.forEach((char, i) => {
 
 text.sourceText.style
   .setFontSize(fontSize)
-  .setLeading(Math.round(fontSize * 0.8125) + lineHeightAdjust)
+  .setLeading(Math.round(fontSize * lineHeightMultiplier) + lineHeightAdjust)
   //.setText(head + ', ' + tail + '\n' + charArr);
   .setText(charArr.join('\n'));
+
+  
