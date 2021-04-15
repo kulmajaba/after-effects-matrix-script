@@ -2,8 +2,8 @@
   "emeraldwalk.runonsave": {
     "commands": [
         {
-            "match": "\\.js$",
-            "cmd": "echo 'Building ${fileBasename}' && node index.js && cat dist/letteranimator.js | npx clipboard"
+            "match": "src\\\\.+\\.js$",
+            "cmd": "echo 'Building ${fileBasename}' && node index.js -i ${file} -o dist/${fileBasename} && cat dist/${fileBasename} | npx clipboard"
         }
     ]
 }

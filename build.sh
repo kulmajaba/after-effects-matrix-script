@@ -1,1 +1,0 @@
-node index.js && cat dist/letteranimator.js | ./node_modules/.bin/clipboard

@@ -1,23 +1,22 @@
 // Effect controls
-const hasTarget = effect('Has target')('Checkbox') == 1;
-const targetIndex = Math.round(effect('Target character index')('Slider'));
-const allCharactersStatic = effect('All characters static')('Checkbox') == 1;
-const length = Math.round(effect('Length')('Slider'));
-const minInterval = Math.round(effect('Minimum interval')('Slider'));
-const probOfChanging = effect('Probability of changing chars')('Slider');
-const seed = Math.round(effect('Random seed')('Slider'));
-const fontSize = Math.round(effect('Font size')('Slider'));
-const lineHeightAdjust = Math.round(effect('Line height adjust')('Slider'));
-const spaceFrequency = Math.round(effect('Space frequency')('Slider'));
-const lifeSpan = Math.round(effect('Character lifespan')('Slider'));
+const targetLayer = effect('Matrix Letters')('Target Title Layer');
+const targetIndex = Math.round(effect('Matrix Letters')('Target Title Character Index'));
+const length = Math.round(effect('Matrix Letters')('Length'));
+const lifeSpan = Math.round(effect('Matrix Letters')('Character Lifespan'));
+const minInterval = Math.round(effect('Matrix Letters')('Minimum Update Interval'));
+const allCharactersStatic = effect('Matrix Letters')('All Characters Static') == 1;
+const probOfChanging = effect('Matrix Letters')('Probability of Changing');
+const spaceFrequency = Math.round(effect('Matrix Letters')('Frequency of Whitespace'));
+const fontSize = Math.round(effect('Matrix Letters')('Font Size'));
+const lineHeightMultiplier = effect('Matrix Letters')('Line Height Multiplier');
+const seed = Math.round(effect('Matrix Letters')('Random Seed'));
 
+
+const hasTarget = targetLayer !== undefined && targetLayer.name !== thisLayer.name;
 let targetChar = ' ';
 if (hasTarget) {
   targetChar = thisComp.layer('Title').text.sourceText.charAt(targetIndex);
 }
-
-// Set line spacing smaller than font size, can be adjusted with the line height adjust slider
-const lineHeightMultiplier = 0.8125;
 
 // Calculate framerate for the layer based on min interval (which is frames)
 const frameRate = 1.0/thisComp.frameDuration/(minInterval !== 0 ? minInterval : 1)
@@ -86,6 +85,5 @@ if (hasTarget && head > charArr.length - 1) {
 
 text.sourceText.style
   .setFontSize(fontSize)
-  .setLeading(Math.round(fontSize * lineHeightMultiplier) + lineHeightAdjust)
+  .setLeading(Math.round(fontSize * lineHeightMultiplier))
   .setText(charArr.join('\n'));
-

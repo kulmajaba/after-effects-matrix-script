@@ -1,0 +1,15 @@
+<Effect matchname="Pseudo/Matrix Letters" name="$$$/AE/Preset/MatrixLetters=Matrix Letters">
+	<Layer name="$$$/AE/Preset/TargetLayer=Target Title Layer" default_self="false"/>
+	<Slider name="$$$/AE/Preset/TargetIndex=Target Title Character Index" default="0" valid_min="0" valid_max="1000" slider_min="0" slider_max="50" precision="0" />
+	<Slider name="$$$/AE/Preset/Length=Length" default="20" valid_min="1" valid_max="1000" slider_min="1" slider_max="50" precision="0" />
+	<Slider name="$$$/AE/Preset/Lifespan=Character Lifespan" default="10" valid_min="1" valid_max="500" slider_min="1" slider_max="100" precision="0" />
+	<Slider name="$$$/AE/Preset/MinInterval=Minimum Update Interval" default="2" valid_min="1" valid_max="300" slider_min="1" slider_max="30" precision="0" />
+	<Checkbox name="$$$/AE/Preset/AllCharactersStatic=All Characters Static" default="false" />
+	<Slider name="$$$/AE/Preset/ProbOfChanging=Probability of Changing" default="10" valid_min="0" valid_max="100" slider_min="0" slider_max="100" precision="1" />
+	<Slider name="$$$/AE/Preset/SpaceFrequency=Frequency of Whitespace" default="20" valid_min="0" valid_max="200" slider_min="0" slider_max="100" precision="0" />
+	<Slider name="$$$/AE/Preset/FontSize=Font Size" default="90" valid_min="1" valid_max="1000" slider_min="1" slider_max="200" precision="1" />
+	<Slider name="$$$/AE/Preset/LineHeightMultiplier=Line Height Multiplier" default="0.8125" valid_min="0" valid_max="10" slider_min="0" slider_max="1" precision="4" />
+	<Color name="$$$/AE/Preset/HeadColor=Leading Character Color" default_red="255" default_green="255" default_blue="255"/>
+	<Color name="$$$/AE/Preset/MainColor=Main Color" default_red="67" default_green="237" default_blue="0"/>
+	<Slider name="$$$/AE/Preset/Seed=Random Seed" default="0" valid_min="-100000" valid_max="100000" slider_min="0" slider_max="1000" precision="0" />
+</Effect>
