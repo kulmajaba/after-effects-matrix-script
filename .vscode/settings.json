@@ -3,7 +3,7 @@
     "commands": [
         {
             "match": "src\\\\.+\\.js$",
-            "cmd": "echo 'Building ${fileBasename}' && node index.js -i ${file} -o dist/${fileBasename} && cat dist/${fileBasename} | npx clipboard"
+            "cmd": "echo 'Building ${fileBasename}' && node src/index.js -i ${file} -o src/dist/${fileBasename} && cat src/dist/${fileBasename} | npx clipboard"
         }
     ]
 }

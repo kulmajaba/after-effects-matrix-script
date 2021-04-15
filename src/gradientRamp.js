@@ -23,7 +23,7 @@ const adjustedHead = hasTarget ? Math.min(head, length - 1) : head;
 
 value = [thisComp.width / 2, position[1] - anchorPoint[1] + (fontSize * lineHeightMultiplier) * (adjustedHead - whiteLetters) + offsetPx];
 
-// #####################################################################################################################
+// #######################################################################################################################################
 
 // End of ramp
 
@@ -36,3 +36,13 @@ const hasTarget = targetLayer !== undefined && targetLayer.name !== thisLayer.na
 
 const start = effect("Gradient Ramp")("Start of Ramp")
 value = [start[0], start[1] - (hasTarget ? 0.5 : (fontSize * lineHeightMultiplier))];
+
+// #######################################################################################################################################
+
+// Start color
+
+effect('Matrix Letters')('Leading Character Color');
+
+// End color
+
+effect('Matrix Letters')('Main Color');
