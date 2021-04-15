@@ -1,6 +1,6 @@
 // Start of ramp
 const whiteLetters = 1;
-const offsetPx = 5;
+const offsetPx = 2;
 
 // Effect controls
 const targetLayer = effect('Matrix Letters')('Target Title Layer');
@@ -9,40 +9,52 @@ const lifeSpan = Math.round(effect('Matrix Letters')('Character Lifespan'));
 const minInterval = Math.round(effect('Matrix Letters')('Minimum Update Interval'));
 const fontSize = Math.round(effect('Matrix Letters')('Font Size'));
 const lineHeightMultiplier = effect('Matrix Letters')('Line Height Multiplier');
+const accentedChars = Math.round(effect('Matrix Letters')('Accented Head Characters'));
 
 const hasTarget = targetLayer !== undefined && targetLayer.name !== thisLayer.name;
 
-// Calculate framerate for the layer based on min interval (in frames)
-const frameRate = 1.0/thisComp.frameDuration/(minInterval !== 0 ? minInterval : 1)
-posterizeTime(frameRate);
+const chars = text.sourceText
 
-const head = Math.round((time - startTime) * frameRate);
-const tail = Math.max(head - lifeSpan, -1);
+const firstNonWhitespace = chars.indexOf(chars.replace(/^[\s\n]+/g, ''));
+const lastNonWhitespace = chars.replace(/[\s\n]+$/g, '').length - 1;
 
-const adjustedHead = hasTarget ? Math.min(head, length - 1) : head;
+const isLast = firstNonWhitespace === lastNonWhitespace;
 
-value = [thisComp.width / 2, position[1] - anchorPoint[1] + (fontSize * lineHeightMultiplier) * (adjustedHead - whiteLetters) + offsetPx];
+const adjustedHead = hasTarget ? Math.min(lastNonWhitespace, text.sourceText.length - 1) : (isLast ? 500 : lastNonWhitespace);
+
+const x = thisComp.width / 2;
+const y = position[1] - anchorPoint[1] + (fontSize * lineHeightMultiplier) * (Math.ceil(adjustedHead / 2) - accentedChars) + offsetPx;
+
+value = [x, y];
 
 // #######################################################################################################################################
 
 // End of ramp
-
 // Effect controls
-const targetLayer = effect('Matrix Letters')('Target Title Layer');
 const fontSize = Math.round(effect('Matrix Letters')('Font Size'));
 const lineHeightMultiplier = effect('Matrix Letters')('Line Height Multiplier');
+const accentedChars = Math.round(effect('Matrix Letters')('Accented Head Characters'));
+const fade = effect('Matrix Letters')('Head Accent Fade');
 
-const hasTarget = targetLayer !== undefined && targetLayer.name !== thisLayer.name;
+const chars = text.sourceText
+
+const firstNonWhitespace = chars.indexOf(chars.replace(/^[\s\n]+/g, ''));
+const lastNonWhitespace = chars.replace(/[\s\n]+$/g, '').length - 1;
+const length = (lastNonWhitespace - firstNonWhitespace - accentedChars + 1) * fade / 100;
 
 const start = effect("Gradient Ramp")("Start of Ramp")
-value = [start[0], start[1] - (hasTarget ? 0.5 : (fontSize * lineHeightMultiplier))];
+value = [start[0], start[1] - 0.1 - (length * fontSize * lineHeightMultiplier)];
 
 // #######################################################################################################################################
 
-// Start color
-
+// Gradient Ramp -> Start color
 effect('Matrix Letters')('Leading Character Color');
 
-// End color
-
+// Gradient Ramp -> End color
 effect('Matrix Letters')('Main Color');
+
+// Animator 1 -> Range Selector 1 -> End
+effect("Matrix Letters")("Tail Fade Start Position")
+
+// Animator 1 -> Range Selector 1 -> Fill Opacity
+effect("Matrix Letters")("Tail Fade End Opacity")
