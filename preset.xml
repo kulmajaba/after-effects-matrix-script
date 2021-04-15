@@ -7,8 +7,8 @@
 	<Checkbox name="$$$/AE/Preset/MatrixLetters/AllCharactersStatic=All Characters Static" default="false" />
 	<Slider name="$$$/AE/Preset/MatrixLetters/ProbOfChanging=Probability of Changing" default="10" valid_min="0" valid_max="100" slider_min="0" slider_max="100" precision="1" />
 	<Slider name="$$$/AE/Preset/MatrixLetters/SpaceFrequency=Frequency of Whitespace" default="20" valid_min="0" valid_max="200" slider_min="0" slider_max="100" precision="0" />
-	<Color name="$$$/AE/Preset/MatrixLetters/HeadColor=Leading Character Color" default_red="255" default_green="255" default_blue="255" />
 	<Color name="$$$/AE/Preset/MatrixLetters/MainColor=Main Color" default_red="67" default_green="237" default_blue="0" />
+	<Color name="$$$/AE/Preset/MatrixLetters/HeadColor=Leading Character Color" default_red="255" default_green="255" default_blue="255" />
 	<Slider name="$$$/AE/Preset/MatrixLetters/Seed=Random Seed" default="0" valid_min="0" valid_max="100000" slider_min="0" slider_max="1000" precision="0" />
 	<Group name="$$$/AE/Preset/MatrixLetters/Font=Font options">
 		<Slider name="$$$/AE/Preset/MatrixLetters/FontSize=Font Size" default="90" valid_min="1" valid_max="1000" slider_min="1" slider_max="200" precision="1" />
