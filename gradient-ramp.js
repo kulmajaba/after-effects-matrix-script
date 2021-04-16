@@ -1,3 +1,7 @@
+// Paste the parts of this script to their places
+
+// ########################################################################################################################################
+
 // Start of ramp
 const whiteLetters = 1;
 const offsetPx = 2;
@@ -27,7 +31,7 @@ const y = position[1] - anchorPoint[1] + (fontSize * lineHeightMultiplier) * (Ma
 
 value = [x, y];
 
-// #######################################################################################################################################
+// ########################################################################################################################################
 
 // End of ramp
 // Effect controls
@@ -45,16 +49,12 @@ const length = (lastNonWhitespace - firstNonWhitespace - accentedChars + 1) * fa
 const start = effect("Gradient Ramp")("Start of Ramp")
 value = [start[0], start[1] - 0.1 - (length * fontSize * lineHeightMultiplier)];
 
-// #######################################################################################################################################
+// ########################################################################################################################################
 
 // Gradient Ramp -> Start color
 effect('Matrix Letters')('Leading Character Color');
 
+// ########################################################################################################################################
+
 // Gradient Ramp -> End color
 effect('Matrix Letters')('Main Color');
-
-// Animator 1 -> Range Selector 1 -> End
-effect("Matrix Letters")("Tail Fade Start Position")
-
-// Animator 1 -> Range Selector 1 -> Fill Opacity
-effect("Matrix Letters")("Tail Fade End Opacity")

@@ -11,7 +11,7 @@ const fontSize = Math.round(effect('Matrix Letters')('Font Size'));
 const lineHeightMultiplier = effect('Matrix Letters')('Line Height Multiplier');
 const seed = Math.round(effect('Matrix Letters')('Random Seed'));
 
-
+// Define boolean hasTarget and possible target character
 const hasTarget = targetLayer !== undefined && targetLayer.name !== thisLayer.name;
 let targetChar = ' ';
 if (hasTarget) {
@@ -84,6 +84,7 @@ if (hasTarget && head > charArr.length - 1) {
 }
 
 text.sourceText.style
+  .setFont('MatrixCodeNFI')
   .setFontSize(fontSize)
   .setLeading(Math.round(fontSize * lineHeightMultiplier))
   .setText(charArr.join('\n'));
