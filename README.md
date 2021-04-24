@@ -8,6 +8,7 @@
     - Mac: `/Applications/Adobe After Effects <year>/Adobe After Effects <year>.app/Contents/Frameworks/aelib.framework/Versions/A/Resources/xml/PresetEffects.xml` (you can use Finder's Go to Folder)
 2. For easy access add `Matrix Letters.ffx` and `Matrix Letters Master.ffx` to your User Presets folder
     - Windows: `C:\Users\<username>\Documents\Adobe\After Effects <year>\User Presets`
+    - Mac: `/Users/<username>/Documents/Adobe/After Effects <year>/User Presets`
 3. Restart AE to update PresetEffects.xml contents
 4. Effects & Presets panel menu -> Refresh list
 5. Create a text layer
