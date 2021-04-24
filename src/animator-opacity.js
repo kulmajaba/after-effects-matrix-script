@@ -1,5 +1,9 @@
-// Animator 1 -> Range Selector 1 -> End
+// Advanced: Percentage, Characters Excluding Spaces, Ramp Down
+
+// Tail fade -> Range Selector 1 -> End
+
 effect("Matrix Letters")("Tail Fade Start Position")
 
-// Animator 1 -> Range Selector 1 -> Fill Opacity
+// Tail fade -> Range Selector 1 -> Opacity
+
 effect("Matrix Letters")("Tail Fade End Opacity")
