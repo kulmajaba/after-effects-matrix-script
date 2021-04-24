@@ -30,3 +30,18 @@
 11. Add styling effects (e.g. grid with only horizontal lines and glows) to taste
 
 Examples provided in the `template.aep` file.
+
+## Notes
+
+- If a layer looks empty for a bit and suddenly has a lot of characters in it or flickers in an out of existence, it probably works right.
+    - The animation is probably a result of a combination of things:
+        - The particular random seed of the layer (Calculated by AE)
+        - Probability of characters changing
+        - Frequency of whitespace
+        - Length and lifespan too
+    - Play around with the settings of the layer until it doesn't do anything weird
+- Useful links (for developing effects and expressions):
+    - https://ae-expressions.docsforadobe.dev/
+    - https://helpx.adobe.com/after-effects/user-guide.html/after-effects/using/expression-language-reference.ug.html
+    - https://helpx.adobe.com/after-effects/user-guide.html/after-effects/using/effects-animation-presets-overview.ug.html#
+    - https://www.batchframe.com/docs/pseudo-help.html
