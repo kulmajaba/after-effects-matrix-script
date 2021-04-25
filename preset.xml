@@ -7,25 +7,31 @@
 		<Checkbox name="$$$/AE/Preset/MatrixLetters/AllCharactersStatic=All Characters Static" default="false" />
 		<Slider name="$$$/AE/Preset/MatrixLetters/ProbOfChanging=Probability of Changing" default="10" valid_min="0" valid_max="100" slider_min="0" slider_max="100" precision="1" DISPLAY_PERCENT="true" />
 		<Slider name="$$$/AE/Preset/MatrixLetters/ProbOfBlanks=Probability of Blanks" default="10" valid_min="0" valid_max="100" slider_min="0" slider_max="100" precision="1" DISPLAY_PERCENT="true" />
-		<Color name="$$$/AE/Preset/MatrixLetters/MainColor=Main Color" default_red="67" default_green="237" default_blue="0" />
-		<Color name="$$$/AE/Preset/MatrixLetters/HeadColor=Leading Character Color" default_red="255" default_green="255" default_blue="255" />
 		<Slider name="$$$/AE/Preset/MatrixLetters/Seed=Random Seed" default="0" valid_min="0" valid_max="100000" slider_min="0" slider_max="1000" precision="0" />
-		<Group name="$$$/AE/Preset/MatrixLetters/Font=Font options">
-			<Slider name="$$$/AE/Preset/MatrixLetters/FontSize=Font Size" default="90" valid_min="1" valid_max="1000" slider_min="1" slider_max="200" precision="1" />
-			<Slider name="$$$/AE/Preset/MatrixLetters/LineHeightMultiplier=Line Height Multiplier" default="0.825" valid_min="0" valid_max="10" slider_min="0" slider_max="1" precision="4" />
-		</Group>
 		<Group name="$$$/AE/Preset/MatrixLetters/Head=Head and Tail Options">
+      <Color name="$$$/AE/Preset/MatrixLetters/MainColor=Main Color" default_red="67" default_green="237" default_blue="0" />
+		  <Color name="$$$/AE/Preset/MatrixLetters/AccentColor=Accent Color" default_red="255" default_green="255" default_blue="255" />
       <Slider name="$$$/AE/Preset/MatrixLetters/ProbOfBlankHead=Probability of Blank Head" default="25" valid_min="0" valid_max="100" slider_min="0" slider_max="100" precision="1" DISPLAY_PERCENT="true" />
 			<Slider name="$$$/AE/Preset/MatrixLetters/HeadCharacters=Accented Head Characters" default="1" valid_min="0" valid_max="100" slider_min="1" slider_max="5" precision="0" />
+      <Slider name="$$$/AE/Preset/MatrixLetters/HeadOpacity=Head Accent Opacity" default="85" valid_min="0" valid_max="100" slider_min="0" slider_max="100" precision="1" DISPLAY_PERCENT="true" />
 			<Slider name="$$$/AE/Preset/MatrixLetters/HeadFade=Head Accent Fade" default="0" valid_min="0" valid_max="100" slider_min="0" slider_max="100" precision="1" DISPLAY_PERCENT="true" />
 			<Slider name="$$$/AE/Preset/MatrixLetters/TailFadeStart=Tail Fade Start Position" default="30" valid_min="0" valid_max="50" slider_min="0" slider_max="50" precision="1" DISPLAY_PERCENT="true"/>
 			<Slider name="$$$/AE/Preset/MatrixLetters/TailFadeOpacity=Tail Fade End Opacity" default="10" valid_min="0" valid_max="100" slider_min="0" slider_max="100" precision="1" DISPLAY_PERCENT="true"/>
 		</Group>
+    <Group name="$$$/AE/Preset/MatrixLetters/Font=Font options">
+			<Slider name="$$$/AE/Preset/MatrixLetters/FontSize=Font Size" default="90" valid_min="1" valid_max="1000" slider_min="1" slider_max="200" precision="1" />
+			<Slider name="$$$/AE/Preset/MatrixLetters/LineHeightMultiplier=Line Height Multiplier" default="0.825" valid_min="0" valid_max="10" slider_min="0" slider_max="1" precision="4" />
+		</Group>
 	</Effect>
 
   <Effect matchname="Pseudo/Matrix Letters Master" name="$$$/AE/Preset/MatrixLettersMaster=Matrix Letters Master">
+    <Color name="$$$/AE/Preset/MatrixLettersMaster/MainColor=Main Color" default_red="67" default_green="237" default_blue="0" />
+		<Color name="$$$/AE/Preset/MatrixLettersMaster/AccentColor=Accent Color" default_red="255" default_green="255" default_blue="255" />
+    <Slider name="$$$/AE/Preset/MatrixLetters/HeadCharacters=Accented Head Characters" default="1" valid_min="0" valid_max="100" slider_min="1" slider_max="5" precision="0" />
+    <Slider name="$$$/AE/Preset/MatrixLetters/HeadOpacity=Head Accent Opacity" default="85" valid_min="0" valid_max="100" slider_min="0" slider_max="100" precision="1" DISPLAY_PERCENT="true" />
+    <Slider name="$$$/AE/Preset/MatrixLetters/HeadFade=Head Accent Fade" default="0" valid_min="0" valid_max="100" slider_min="0" slider_max="100" precision="1" DISPLAY_PERCENT="true" />
+    <Slider name="$$$/AE/Preset/MatrixLetters/TailFadeStart=Tail Fade Start Position" default="30" valid_min="0" valid_max="50" slider_min="0" slider_max="50" precision="1" DISPLAY_PERCENT="true"/>
+    <Slider name="$$$/AE/Preset/MatrixLetters/TailFadeOpacity=Tail Fade End Opacity" default="10" valid_min="0" valid_max="100" slider_min="0" slider_max="100" precision="1" DISPLAY_PERCENT="true"/>
 		<Slider name="$$$/AE/Preset/MatrixLettersMaster/FontSize=Font Size" default="90" valid_min="1" valid_max="1000" slider_min="1" slider_max="200" precision="1" />
     <Slider name="$$$/AE/Preset/MatrixLettersMaster/LineHeightMultiplier=Line Height Multiplier" default="0.825" valid_min="0" valid_max="10" slider_min="0" slider_max="1" precision="4" />
-		<Color name="$$$/AE/Preset/MatrixLettersMaster/MainColor=Main Color" default_red="67" default_green="237" default_blue="0" />
-		<Color name="$$$/AE/Preset/MatrixLettersMaster/HeadColor=Leading Character Color" default_red="255" default_green="255" default_blue="255" />
 	</Effect>

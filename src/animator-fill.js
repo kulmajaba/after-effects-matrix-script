@@ -5,9 +5,14 @@
 const accentedChars = Math.round(effect('Matrix Letters')('Accented Head Characters'));
 const fade = Math.round(effect('Matrix Letters')('Head Accent Fade'));
 
-value = text.animator("Head accent").selector("Range Selector 1").end - fade;
+value = text.animator('Head Accent').selector('Range Selector 1').end - fade;
 
 // Fill -> Range Selector -> End
+
+// Calculate framerate for the layer based on update interval (which is frames)
+const updateInterval = Math.round(effect('Matrix Letters')('Update Interval'));
+const frameRate = 1.0/thisComp.frameDuration/(updateInterval !== 0 ? updateInterval : 1)
+posterizeTime(frameRate);
 
 // Effect controls
 const targetLayer = effect('Matrix Letters')('Target Title Layer');
@@ -29,4 +34,13 @@ value = adjustedHead;
 
 // Fill -> Fill color
 
-effect("Matrix Letters")("Leading Character Color")
+// Effect controls
+const mainCol = effect('Matrix Letters')('Main Color');
+const accentCol = effect('Matrix Letters')('Accent Color');
+const accentOpacity = effect('Matrix Letters')('Head Accent Opacity') / 100;
+
+const newColR = accentOpacity * accentCol[0] + (1 - accentOpacity) * mainCol[0];
+const newColG = accentOpacity * accentCol[1] + (1 - accentOpacity) * mainCol[1];
+const newColB = accentOpacity * accentCol[2] + (1 - accentOpacity) * mainCol[2];
+
+value = [newColR, newColG, newColB, 1];
