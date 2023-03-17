@@ -9,7 +9,7 @@
 		<Slider name="$$$/AE/Preset/MatrixLetters/ProbOfBlanks=Probability of Blanks" default="10" valid_min="0" valid_max="100" slider_min="0" slider_max="100" precision="1" DISPLAY_PERCENT="true" />
 		<Slider name="$$$/AE/Preset/MatrixLetters/Seed=Random Seed" default="0" valid_min="0" valid_max="100000" slider_min="0" slider_max="1000" precision="0" />
 		<Group name="$$$/AE/Preset/MatrixLetters/Head=Head and Tail Options">
-      <Color name="$$$/AE/Preset/MatrixLetters/MainColor=Main Color" default_red="67" default_green="237" default_blue="0" />
+      <Color name="$$$/AE/Preset/MatrixLetters/MainColor=Main Color" default_red="12" default_green="173" default_blue="72" />
 		  <Color name="$$$/AE/Preset/MatrixLetters/AccentColor=Accent Color" default_red="255" default_green="255" default_blue="255" />
       <Slider name="$$$/AE/Preset/MatrixLetters/ProbOfBlankHead=Probability of Blank Head" default="25" valid_min="0" valid_max="100" slider_min="0" slider_max="100" precision="1" DISPLAY_PERCENT="true" />
 			<Slider name="$$$/AE/Preset/MatrixLetters/HeadCharacters=Accented Head Characters" default="1" valid_min="0" valid_max="100" slider_min="1" slider_max="5" precision="0" />
@@ -25,7 +25,7 @@
 	</Effect>
 
   <Effect matchname="Pseudo/Matrix Letters Master" name="$$$/AE/Preset/MatrixLettersMaster=Matrix Letters Master">
-    <Color name="$$$/AE/Preset/MatrixLettersMaster/MainColor=Main Color" default_red="67" default_green="237" default_blue="0" />
+    <Color name="$$$/AE/Preset/MatrixLettersMaster/MainColor=Main Color" default_red="12" default_green="173" default_blue="72" />
 		<Color name="$$$/AE/Preset/MatrixLettersMaster/AccentColor=Accent Color" default_red="255" default_green="255" default_blue="255" />
     <Slider name="$$$/AE/Preset/MatrixLetters/HeadCharacters=Accented Head Characters" default="1" valid_min="0" valid_max="100" slider_min="1" slider_max="5" precision="0" />
     <Slider name="$$$/AE/Preset/MatrixLetters/HeadOpacity=Head Accent Opacity" default="85" valid_min="0" valid_max="100" slider_min="0" slider_max="100" precision="1" DISPLAY_PERCENT="true" />

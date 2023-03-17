@@ -3,9 +3,10 @@
 // Fill -> Range Selector -> Start
 
 const accentedChars = Math.round(effect('Matrix Letters')('Accented Head Characters'));
+const lifespan = Math.round(effect('Matrix Letters')('Character Lifespan'));
 const fade = Math.round(effect('Matrix Letters')('Head Accent Fade'));
 
-value = text.animator('Head Accent').selector('Range Selector 1').end - fade;
+value = text.animator('Head Accent').selector('Range Selector 1').end - fade / 100 * lifespan;
 
 // Fill -> Range Selector -> End
 
